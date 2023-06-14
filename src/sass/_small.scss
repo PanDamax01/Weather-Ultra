@@ -1,0 +1,45 @@
+@media (min-width: 360px) {
+	.main-info {
+		&__top {
+			height: 67px;
+		}
+
+		&__img {
+			width: 142px;
+			transform: translate(-10px, -33px);
+		}
+
+		&__temp {
+			font-size: 5rem;
+			transform: none;
+		}
+
+		&__time {
+			display: block;
+		}
+	}
+}
+
+@media (min-width: 460px) {
+	.toolbar {
+		padding: 0 1em;
+	}
+}
+
+@media (min-width: 576px) {
+	.main-info {
+		&__img {
+			width: 170px;
+			transform: translate(-10px, -46px);
+		}
+
+		&__temp {
+			font-size: 6rem;
+			background-image: linear-gradient(
+				182deg,
+				rgba(255, 255, 255, 1) 72%,
+				rgba(46, 171, 242, 1) 100%
+			);
+		}
+	}
+}
