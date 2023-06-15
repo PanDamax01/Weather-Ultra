@@ -18,6 +18,23 @@
 			display: block;
 		}
 	}
+
+	.more-info {
+		&__title {
+			font-size: 2rem;
+		}
+
+		&__list {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 0.8em 0.2em;
+		}
+
+		&__name {
+			display: block;
+			font-size: 1.6rem;
+			font-weight: 600;
+		}
+	}
 }
 
 @media (min-width: 460px) {
@@ -35,11 +52,17 @@
 
 		&__temp {
 			font-size: 6rem;
-			background-image: linear-gradient(
-				182deg,
-				rgba(255, 255, 255, 1) 72%,
-				rgba(46, 171, 242, 1) 100%
-			);
+			background-image: linear-gradient(182deg, rgba(255, 255, 255, 1) 72%, rgba(46, 171, 242, 1) 100%);
+		}
+	}
+
+	.more-info{
+		&__icon {
+			width: 50px;
+		}
+
+		&__number{
+			font-size: 2rem;
 		}
 	}
 }
