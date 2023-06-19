@@ -45,6 +45,29 @@
 			margin-right: 0;
 		}
 	}
+
+	.popup {
+		padding: 1em 1em 0.8em;
+
+		&__text {
+			font-size: 2rem;
+
+			&::after {
+				top: 40px;
+				right: 10px;
+				width: 36px;
+				height: 36px;
+			}
+		}
+
+		&__input {
+			font-size: 2rem;
+		}
+
+		&__btn {
+			font-size: 1.8rem;
+		}
+	}
 }
 
 @media (min-width: 460px) {
