@@ -1,3 +1,36 @@
+import { getApi } from './api.min.js'
+
+
+async function loadingPage(){
+    try{
+        const response = await getApi()
+        console.log(response);
+    }
+    catch (error){
+        console.log('Błąd:', error);
+    }
+}
+loadingPage()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
