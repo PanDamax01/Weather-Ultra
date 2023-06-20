@@ -16,6 +16,19 @@ body {
 	margin: 0 auto;
 }
 
+@mixin button-before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 120%;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform 0.3s;
+	z-index: -1;
+}
+
 // - nav toolbar
 .toolbar {
 	display: flex;
@@ -32,25 +45,16 @@ body {
 		border: none;
 		border-radius: 40px;
 		box-shadow: c.$main-shadow;
-		font-weight: 600;
 		font-size: 1.8rem;
-		transition: background-color 0.3s; //all 0.2s ease-out,
+		font-weight: 600;
+		transition: background-color 0.3s;
 		overflow: hidden;
 		cursor: pointer;
 		z-index: 0;
 
 		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 120%;
-			background-color: rgba(10, 213, 244, 0.676);
-			transform: scaleX(0);
-			transform-origin: right;
-			transition: transform 0.3s;
-			z-index: -1;
+			@include button-before;
+			background-color: c.$btn-before;
 		}
 
 		&:hover::before {
@@ -100,8 +104,8 @@ body {
 
 		&:checked + .toolbar__switch::after {
 			left: 101%;
-			transform: translateX(-100%);
 			background-image: c.$linear-gradient-checbox;
+			transform: translateX(-100%);
 		}
 	}
 
@@ -162,8 +166,7 @@ body {
 			rgba(255, 255, 255, 1) 46%,
 			rgba(46, 171, 242, 1) 100%
 		);
-		// -webkit-background-clip: text;
-		background-clip: text; // to usunąc dać te wyższe
+		background-clip: text;
 		font-size: 3rem;
 		font-weight: bold;
 		transform: translate(-8px, 0px);
@@ -191,11 +194,11 @@ body {
 			content: '';
 			position: absolute;
 			left: -33%;
-			transform: translateX(-50%);
 			width: 30px;
 			height: 30px;
 			background-image: url('../img/clock.gif');
 			background-size: cover;
+			transform: translateX(-50%);
 		}
 	}
 }
@@ -207,11 +210,11 @@ body {
 	max-width: 380px;
 	background-color: c.$white;
 	border-radius: 40px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: c.$dark-shadow;
 
 	&__title {
-		font-size: 1.8rem;
 		margin-bottom: 0.8em;
+		font-size: 1.8rem;
 	}
 
 	&__list {
@@ -235,8 +238,8 @@ body {
 	}
 
 	&__number {
-		font-weight: bold;
 		font-size: 1.8rem;
+		font-weight: bold;
 	}
 }
 
@@ -254,10 +257,10 @@ body {
 		flex-wrap: wrap;
 		padding: 0.6em 5em 0.6em 1em;
 		margin: 0 auto 0.6em;
-		color: #fff;
+		color: c.$white;
 		background-image: linear-gradient(122deg, #60dfcd, #1e9afe);
 		border-radius: 20px;
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+		box-shadow: c.$dark-shadow;
 	}
 
 	&__day {
@@ -275,12 +278,11 @@ body {
 
 	&__temp {
 		margin-right: 0.3em;
-		font-size: 2.6rem;
-		font-weight: bold;
 		color: transparent;
 		background-image: linear-gradient(182deg, #fff 54%, #2eabf2);
 		background-clip: text;
-		// dac do include
+		font-size: 2.6rem;
+		font-weight: bold;
 	}
 
 	&__img {
@@ -295,14 +297,15 @@ body {
 	position: absolute;
 	top: 35%;
 	left: 50%;
-	transform: translate(-50%,-60vh);
+	transform: translate(-50%, -80vh);
 	display: flex;
 	flex-direction: column;
 	padding: 0.8em 0.6em;
-	background-color: #fff;
+	background-color: c.$white;
+	border: c.$border-btn;
 	border-radius: 20px;
-	border: 2px solid #574f4f;
-	box-shadow: 4px 4px 20px 0 rgba(88, 180, 248, 0.36);
+	box-shadow: c.$main-shadow;
+	transition: transform .6s;
 
 	&__text {
 		position: relative;
@@ -318,7 +321,6 @@ body {
 			width: 30px;
 			height: 30px;
 			background-image: url('../img/icon/find.png');
-			background-position: center;
 			background-size: cover;
 		}
 	}
@@ -330,7 +332,7 @@ body {
 		border: 2px solid #d8d8d8;
 		border-radius: 10px;
 		font-size: 1.6rem;
-		box-shadow: 4px 4px 20px 0 rgba(88, 180, 248, 0.36);
+		box-shadow: c.$main-shadow;
 	}
 
 	&__box {
@@ -344,28 +346,19 @@ body {
 		display: flex;
 		align-items: center;
 		padding: 0.6em 1.4em;
-		background-color: #fff;
+		background-color: c.$white;
 		border: 1px solid #0000002e;
 		border-radius: 20px;
 		font-size: 1.6rem;
 		font-weight: 600;
-		box-shadow: 4px 4px 20px 0 rgba(88, 180, 248, 0.36);
+		box-shadow: c.$main-shadow;
 		cursor: pointer;
 		z-index: 0;
 		overflow: hidden;
 
 		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 120%;
-			background-color: rgb(108, 249, 108);
-			transform: scaleX(0);
-			transform-origin: right;
-			transition: transform 0.3s;
-			z-index: -1;
+			@include button-before;
+			background-color: c.$btnsend;
 		}
 
 		&:hover::before {
@@ -373,14 +366,14 @@ body {
 			transform-origin: left;
 		}
 
-		&--error {
+		&--close {
 			&::before {
-				background-color: #ff4848;
+				background-color: c.$btncancel;
 			}
 
 			&:hover {
 				.popup__line {
-					background-color: #000;
+					background-color: c.$dark;
 				}
 			}
 		}
@@ -398,7 +391,7 @@ body {
 		left: 0;
 		width: 2px;
 		height: 18px;
-		background-color: red;
+		background-color: c.$red;
 		transform: rotate(45deg);
 		transition: background-color 0.3s;
 
@@ -415,17 +408,28 @@ body {
 	}
 }
 
+.error {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	width: 100%;
+	max-width: 400px;
+	padding: 0 1em;
+	transform: translate(-50%,-100px);
+	z-index: 20;
+
+	&__text {
+		padding: .4em 1em;
+		color: c.$white;
+		background-color: c.$red;
+		font-weight: 600;
+	}
+}
+
 @import 'small';
 @import 'medium';
 
 //   -animation
-.move-left {
-	transform: rotate(45deg);
-	left: 100px;
-
-	animation: move 1s ease-out forwards;
-}
-
 .move-shake {
 	animation: shake 1s linear;
 }
@@ -438,7 +442,7 @@ body {
 	0%,
 	40%,
 	100% {
-		border: 2px solid red;
+		border: 2px solid c.$red;
 	}
 	20%,
 	60% {
@@ -458,41 +462,41 @@ body {
 	40%,
 	90%,
 	70% {
-		transform: translate(-54%,-50%);
+		transform: translate(-54%, -50%);
 	}
 	20%,
 	50%,
 	80%,
 	95% {
-		transform: translate(-46%,-50%);
+		transform: translate(-46%, -50%);
 	}
 }
 
-@keyframes move {
+.move-left {
+	animation: move-left 1s ease-out forwards;
+}
+
+@keyframes move-left {
 	0% {
-		left: -10px;
-		transform: rotate(0);
+		transform: translateX(0) rotate(0);
 	}
 	20% {
-		transform: rotate(25deg);
+		transform: translateX(-10px) rotate(25deg);
 	}
-	40% {
-		transform: rotate(45deg);
+	40%,
+	60%,
+	80% {
+		transform: translateX(-20px) rotate(45deg);
 	}
 	50% {
-		transform: rotate(60deg);
-	}
-	60% {
-		transform: rotate(45deg);
+		transform: translateX(-30px) rotate(60deg);
 	}
 	70% {
-		transform: rotate(35deg);
-	}
-	80% {
-		transform: rotate(45deg);
+		transform: translateX(-15px) rotate(35deg);
 	}
 	100% {
-		left: 134px;
+		left: 100px;
+		transform: translateX(134px) rotate(0);
 	}
 }
 
@@ -503,4 +507,11 @@ body {
 	to {
 		left: 130%;
 	}
+}
+
+.blur{
+	user-select: none;
+	pointer-events: none;
+	filter: blur(7px);
+	transition: filter .3s;
 }
