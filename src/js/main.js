@@ -1,15 +1,61 @@
 import { getApi } from './api.min.js'
+import sortFunctions from './sortOptions.min.js'
+import renderWebsite from './renderWebsite.min.js'
+import { eventsDOM } from './eventsDOM.min.js'
 
 
 async function loadingPage(){
     try{
         const response = await getApi()
-        console.log(response);
+        setWeather(response)
+        setTime()
+        eventsDOM()
     }
     catch (error){
         console.log('Błąd:', error);
     }
 }
+
+function setWeather(date){
+    renderWebsite.currentWeather(date.list[0], sortFunctions)
+    renderWebsite.othersWeather(date.city, sortFunctions)
+}
+
+
+
+
+
+
+
+
+
+
+// zamiast tego napisać funkcje ktora pokazuje czas w danym miejscowości za pomoca api
+function setTime(){
+    const now = new Date()
+    const day = now.getDate()
+    const mounth = now.getMonth() + 1
+    document.querySelector('.main-info__date').textContent = `${day}.${lz(mounth)}`
+
+    function lz(i) {
+        return `${i}`.padStart(2, '0');
+    }
+      
+    function time() {
+        const now = new Date();
+        const textTime = `${lz(now.getHours())}:${lz(now.getMinutes())}`;
+        document.querySelector('.main-info__time').textContent = textTime
+    };
+    setInterval(time, 1000);
+}
+
+
+
+
+
+
+
+// gumofilce
 loadingPage()
 
 
@@ -33,34 +79,6 @@ loadingPage()
 
 
 
-
-const btn = document.querySelector('.toolbar__search')
-const background = document.querySelectorAll('.wrapper')
-const btnClose = document.querySelector('.popup__btn--close')
-const popup = document.querySelector('.popup')
-
-const openPopup = () =>{
-    background.forEach(el =>{
-        el.classList.add('blur')
-    })
-    popup.style.transform = 'translate(-50%,-50%)'
-}
-const closePopup = (e) =>{
-    if( btnClose.contains(e.target) || e.target === document.body ){
-    background.forEach(el =>{
-        el.classList.remove('blur')
-    })
-    popup.style.transform = ''
-    }
-}
-
-
-
-btn.addEventListener('click', openPopup)
-btnClose.addEventListener('click', closePopup)
-document.body.addEventListener('click', closePopup)
-
-
 //////////////////////////////////////////
 
 
@@ -70,16 +88,6 @@ const btnSvg = document.querySelector('.popup__svg')
 // const popup = document.querySelector('.popup')
 const input = document.querySelector('.popup__input')
 
-// btn.addEventListener('click', ()=>{
-//     background.forEach(el =>{
-//         el.style.transition = 'filter .3s'
-//         el.style.filter = 'blur(7px)'
-//         el.style.userSelect = 'none'
-//         el.style.pointerEvents = 'none'
-//     })
-//     popup.style.transition = 'transform .6s'
-//     popup.style.transform = 'translate(-50%,-50%)'
-// })
 
 
 
