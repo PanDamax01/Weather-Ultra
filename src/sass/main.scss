@@ -228,9 +228,9 @@ body {
 		flex-direction: column;
 		align-items: center;
 
-		& > .wind-deg{
+		& > .wind-deg {
 			text-align: center;
-    		font-size: 1.8rem;
+			font-size: 1.8rem;
 		}
 	}
 
@@ -310,7 +310,7 @@ body {
 	border: c.$border-btn;
 	border-radius: 20px;
 	box-shadow: c.$main-shadow;
-	transition: transform .6s;
+	transition: transform 0.6s;
 
 	&__text {
 		position: relative;
@@ -417,17 +417,34 @@ body {
 	position: absolute;
 	top: 10px;
 	left: 50%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4em 1em;
 	width: 100%;
-	max-width: 400px;
-	padding: 0 1em;
-	transform: translate(-50%,-100px);
+	max-width: 450px;
+	color: c.$white;
+	background-color: c.$red;
+	transform: translate(-50%, -100px);
+	transition: transform 0.3s;
 	z-index: 20;
 
 	&__text {
-		padding: .4em 1em;
-		color: c.$white;
-		background-color: c.$red;
+		font-size: 1.4rem;
 		font-weight: 600;
+	}
+
+	&__x {
+		width: 20px;
+		cursor: pointer;
+	}
+
+	&__line {
+		top: 0px;
+		left: 8px;
+		width: 3px;
+		height: 21px;
+		background-color: #fff;
 	}
 }
 
@@ -514,9 +531,9 @@ body {
 	}
 }
 
-.blur{
+.blur {
 	user-select: none;
 	pointer-events: none;
 	filter: blur(7px);
-	transition: filter .3s;
+	transition: filter 0.3s;
 }

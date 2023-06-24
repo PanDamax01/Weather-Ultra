@@ -85,5 +85,5 @@ export default {
     checkPrecipitition,
     checkText,
     windDirection,
-    timeSun // ahhh to delete
+    timeSun
 }

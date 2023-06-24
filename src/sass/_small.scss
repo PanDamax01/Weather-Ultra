@@ -68,6 +68,12 @@
 			font-size: 1.8rem;
 		}
 	}
+
+	.error{
+		&__text {
+			font-size: 2rem;
+		}
+	}
 }
 
 @media (min-width: 460px) {
