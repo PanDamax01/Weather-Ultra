@@ -1,53 +1,37 @@
 import { getApi } from './api.min.js'
-import sortFunctions from './sortOptions.min.js'
+import sortFunctions from './sortFunctions.min.js'
 import renderWebsite from './renderWebsite.min.js'
-import { eventsDOM, setTime } from './eventsDOM.min.js'
+import { events, checkCityApi } from './eventsDOM.min.js'
 
-let obj = {
-    city: 'Kraków'
-}
+let city = 'Kraków'
 
 async function loadingPage(){
     try{
-        const response = await getApi(obj.city)
+        const response = await getApi(city)
         setWeather(response)
     }
     catch (error){
-        console.log('Błąd:', error);
-        //pojawia sie ostrzezenie ze zla naza
-        // i te aniacje
-        // lub klasa 
-        // i naprawic te pojawianie sie i odemowanie
+        console.log('Błąd:', error)
+        checkCityApi()
     }
 }
-eventsDOM();
-setTime()
+events()
 
-function setWeather(date){
-    renderWebsite.currentWeather(date.list[0], sortFunctions)
-    renderWebsite.othersWeather(date.city, sortFunctions)
+function setWeather(data){
+    renderWebsite.currentWeather(data.list[0], sortFunctions)
+    renderWebsite.othersWeather(data.city, sortFunctions)
+    renderWebsite.tomorrowWeather(data.list, sortFunctions)
+    renderWebsite.dayAfterTomorrow(data.list, sortFunctions)
 }
 
-document.querySelector('.popup__btn--send').addEventListener('click', ()=>{
-    if (document.querySelector('.popup__input').value !== '') {
-        obj.city = document.querySelector('.popup__input').value 
+const checkCity = () => {
+    if (/^[a-zA-Z\u0080-\u024F\s\/\-\)\(\`\.\"\']+$/.test(document.querySelector('.popup__input').value)) {
+        city = document.querySelector('.popup__input').value 
         loadingPage()
     }
-})
-
-
-
-
-
-
-
-// zamiast tego napisać funkcje ktora pokazuje czas w danym miejscowości za pomoca api
-
-
-
-
-
-
+}
+document.querySelector('.popup__btn--send').addEventListener('click', checkCity)
+document.querySelector('.popup__input').addEventListener('keyup', event => event.keyCode === 13 ? checkCity():null)
 
 
 // gumofilce

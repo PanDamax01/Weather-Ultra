@@ -42,7 +42,11 @@
 		}
 
 		&__icon {
-			margin-right: 0;
+			margin-right: .2em;
+			
+			&:nth-child(2){
+				margin-right: 0;
+			}
 		}
 	}
 
