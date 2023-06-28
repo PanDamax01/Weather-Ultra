@@ -1,5 +1,6 @@
 const btn = document.querySelector('.toolbar__search')
 const background = document.querySelectorAll('.wrapper')
+const switchBtn = document.querySelector('.toolbar__switch')
 
 const btnClose = document.querySelector('.popup__btn--close')
 const btnSearch = document.querySelector('.popup__btn--send')
@@ -13,6 +14,13 @@ const errorModal = document.querySelector('.error')
 const errorText = document.querySelector('.error__text')
 const errorBtn = document.querySelector('.error__x')
 const cityRegex = /^[a-zA-Z\u0080-\u024F\s\/\-\)\(\`\.\"\']+$/
+let theme = localStorage.getItem('theme')
+
+if (theme === 'dark') {
+    document.body.classList.add('dark')
+} else{
+    document.body.classList.add('light')
+}
 
 const addBlur = () => {
     background.forEach(el => el.classList.add('blur'))
@@ -93,8 +101,23 @@ const checkButton = () => {
     }
 }
 
+const setDarkMode = () => {
+    // document.body.classList.toggle('dark')
+    if (theme === 'dark') {
+        document.body.classList.remove("dark")
+        document.body.classList.add("light")
+        theme = 'light'
+    } else {
+        document.body.classList.remove("light")
+        document.body.classList.add("dark")
+        theme = 'dark'
+    }
+    localStorage.setItem('theme', theme)
+}
+
 function eventsDOM(){
     btn.addEventListener('click', openPopup)
+    switchBtn.addEventListener('click', setDarkMode)
     btnClose.addEventListener('click', closePopup)
     document.body.addEventListener('click', closePopup)
     btnSearch.addEventListener('click', checkButton)
@@ -130,3 +153,13 @@ export function events(){
     eventsDOM()
     setTime()
 }
+
+(() => {
+    const hehe = () => {
+        if (input.value === 'Krystian' || input.value === 'krystian') {
+            document.querySelector('.special').style.transform = 'translateY(0)'
+        }
+    }
+    btnSearch.addEventListener('click', hehe)
+    input.addEventListener('keyup', event => event.keyCode === 13 ? hehe():null)
+})();

@@ -22,6 +22,8 @@ function setWeather(data){
     renderWebsite.othersWeather(data.city, sortFunctions)
     renderWebsite.tomorrowWeather(data.list, sortFunctions)
     renderWebsite.dayAfterTomorrow(data.list, sortFunctions)
+    renderWebsite.thirdDay(data.list, sortFunctions)
+    renderWebsite.fourdDay(data.list, sortFunctions)
 }
 
 const checkCity = () => {

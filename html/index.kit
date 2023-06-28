@@ -20,11 +20,10 @@
             Szukaj
         </button>
 
-        <input class="toolbar__checkbox" type="checkbox" id="darkmode-toggle">
-        <label for="darkmode-toggle" class="toolbar__switch">
-            <img src="dist/img/icon/sun.png" alt="Icon sun" class="toolbar__icon">
-            <img src="dist/img/icon/mon.png" alt="Icon mon" class="toolbar__icon toolbar__icon--mon">
-        </label>
+        <button class="toolbar__switch">
+            <img src="dist/img/icon/sun.png" alt="Icon sun" class="toolbar__icon toolbar__icon--sun">
+            <img src="dist/img/icon/mon.png" alt="Icon mon" class="toolbar__icon toolbar__icon--moon">
+        </button>
     </nav>
 
     <main class="main wrapper">
@@ -85,99 +84,137 @@
         <section class="weather-future">
             <ul class="weather-future__list">
 
-                <li class="weather-future__item">
-                    <span class="weather-future__day">Jutro 6:00</span>
+                <div class="weather-future__box weather-future__box--reverse">
+                    <li class="weather-future__item tomorrow-six">
+                        <span class="weather-future__day">Jutro 6:00</span>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp tomorrow-six-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp tomorrow-six-pop">23%</span>
+    
+                        <img class="weather-future__img tomorrow-six-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item tomorrow-twelve">
+                        <span class="weather-future__day">Jutro 12:00</span>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp tomorrow-twelve-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp tomorrow-twelve-pop">23%</span>
+    
+                        <img class="weather-future__img tomorrow-twelve-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item tomorrow-eighteen">
+                        <span class="weather-future__day">Jutro 18:00</span>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp tomorrow-eighteen-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp  tomorrow-eighteen-pop">23%</span>
+    
+                        <img class="weather-future__img tomorrow-eighteen-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                </div>
 
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp tomorrow-six-temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp tomorrow-six-pop">23%</span>
+                <div class="weather-future__box">
+                    <li class="weather-future__item DAT-six">
+                        <span class="weather-future__day">Pojutrze 6:00</span>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp DAT-six-temp">23°C</span>
+                        <img class="weather-future__icon " src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp DAT-six-pop">23%</span>
+    
+                        <img class="weather-future__img DAT-six-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item DAT-twelve">
+                        <span class="weather-future__day">Pojutrze 12:00</span>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp DAT-twelve-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp DAT-twelve-pop">23%</span>
+    
+                        <img class="weather-future__img DAT-twelve-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item DAT-eighteen">
+                        <span class="weather-future__day">Pojutrze 18:00</span>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp DAT-eighteen-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp DAT-eighteen-pop">23%</span>
+    
+                        <img class="weather-future__img DAT-eighteen-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                </div>
 
-                    <img class="weather-future__img tomorrow-six-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-                <li class="weather-future__item">
-                    <span class="weather-future__day">Jutro 12:00</span>
+                <div class="weather-future__box weather-future__box--reverse">
+                    <li class="weather-future__item third-six">
+                        <p class="weather-future__day"><span class="third-day-name">Poniedziałek</span> 6:00</p>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp third-six-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp third-six-pop">23%</span>
+    
+                        <img class="weather-future__img third-six-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item third-twelve">
+                        <p class="weather-future__day"><span class="third-day-name">Poniedziałek</span> 12:00</p>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp third-twelve-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp third-twelve-pop">23%</span>
+    
+                        <img class="weather-future__img third-twelve-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item third-eighteen">
+                        <p class="weather-future__day"><span class="third-day-name">Poniedziałek</span> 18:00</p>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp third-eighteen-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp third-eighteen-pop">23%</span>
+    
+                        <img class="weather-future__img third-eighteen-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                </div>
 
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp tomorrow-twelve-temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp tomorrow-twelve-pop">23%</span>
-
-                    <img class="weather-future__img tomorrow-twelve-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-                <li class="weather-future__item">
-                    <span class="weather-future__day">Jutro 18:00</span>
-
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp tomorrow-eighteen-temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp  tomorrow-eighteen-pop">23%</span>
-
-                    <img class="weather-future__img tomorrow-eighteen-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-
-                <li class="weather-future__item">
-                    <span class="weather-future__day">Pojutrze 6:00</span>
-
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp DAT-six-temp">23°C</span>
-                    <img class="weather-future__icon " src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp DAT-six-pop">23%</span>
-
-                    <img class="weather-future__img DAT-six-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-                <li class="weather-future__item">
-                    <span class="weather-future__day">Pojutrze 12:00</span>
-
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp DAT-twelve-temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp DAT-twelve-pop">23%</span>
-
-                    <img class="weather-future__img DAT-twelve-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-                <li class="weather-future__item">
-                    <span class="weather-future__day">Pojutrze 18:00</span>
-
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp DAT-eighteen-temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp DAT-eighteen-pop">23%</span>
-
-                    <img class="weather-future__img DAT-eighteen-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-
-
-                <li class="weather-future__item">
-                    <p class="weather-future__day"><span>Poniedziałek</span> 6:00</p>
-
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp">23%</span>
-
-                    <img class="weather-future__img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-                <li class="weather-future__item">
-                    <p class="weather-future__day"><span>Poniedziałek</span> 12:00</p>
-
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp">23%</span>
-
-                    <img class="weather-future__img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
-                <li class="weather-future__item">
-                    <p class="weather-future__day"><span>Poniedziałek</span> 18:00</p>
-
-                    <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
-                    <span class="weather-future__temp">23°C</span>
-                    <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
-                    <span class="weather-future__temp">23%</span>
-
-                    <img class="weather-future__img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
-                </li>
+                <div class="weather-future__box">
+                    <li class="weather-future__item four-six">
+                        <p class="weather-future__day"><span class="four-day-name">Poniedziałek</span> 6:00</p>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp four-six-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp four-six-pop">23%</span>
+    
+                        <img class="weather-future__img four-six-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item four-twelve">
+                        <p class="weather-future__day"><span class="four-day-name">Poniedziałek</span> 12:00</p>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp four-twelve-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp four-twelve-pop">23%</span>
+    
+                        <img class="weather-future__img four-twelve-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                    <li class="weather-future__item four-eighteen">
+                        <p class="weather-future__day"><span class="four-day-name">Poniedziałek</span> 18:00</p>
+    
+                        <img class="weather-future__icon" src="dist/img/icon/temperature.png" alt="Icon temperature">
+                        <span class="weather-future__temp four-eighteen-temp">23°C</span>
+                        <img class="weather-future__icon" src="dist/img/icon/precipitation.png" alt="Icon pop">
+                        <span class="weather-future__temp four-eighteen-pop">23%</span>
+    
+                        <img class="weather-future__img four-eighteen-img" src="dist/img/suncloudyrain.png" alt="Weather icon tomorrow">
+                    </li>
+                </div>
             </ul>
         </section>
 
@@ -230,7 +267,7 @@
     </div>
 </div>
 
-
+<a href="https://www.youtube.com/c/CristianPL" rel="noopener" class="special"><img src="dist/img/krystian.jpg" alt="special"></a>
     <script type="module" src="dist/js/main.min.js"></script>
 </body>
 </html>

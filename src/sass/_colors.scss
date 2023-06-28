@@ -1,17 +1,28 @@
-$background-color: #edfdfb;
-$white: #fff;
-$dark: #000;
-$red: red;
-$background-checbox: #c0f5fd;
-$background-checbox-dark: #242424;
-$main-shadow: 4px 4px 20px 0 rgb(88 180 248 / 36%);
+// light mode
+body.light{
+    --background-color: #edfdfb;
+    --white: #fff;
+    --dark: #000;
+    --red: red;
+    --background-checbox: #c0f5fd;
 
-$dark-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    --main-shadow: 4px 4px 20px 0 rgb(88 180 248 / 36%);
+    --dark-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 
-$linear-gradient-checbox: linear-gradient(180deg, #777, #3a3a3a);
+    --main-gradient: linear-gradient(104deg,#1984ff,#34dbff); 
+    --linear-gradient-checbox: linear-gradient(180deg, #777, #3a3a3a);
 
-$btn-before: rgba(10, 213, 244, 0.676);
-$border-btn: 2px solid #574f4f;
+    --btn-before: rgba(10, 213, 244, 0.676);
+    --border-btn: 2px solid #574f4f;
 
-$btncancel: #ff4848;
-$btnsend: rgb(108, 249, 108);
+    --btncancel: #ff4848;
+    --btnsend: rgb(108, 249, 108);
+}
+
+// $rainmoon: linear-gradient(293deg, rgba(0,126,247,1) 0%, rgba(3,39,173,1) 100%); // and burza
+// $rainsun: linear-gradient(273deg, rgba(71,214,243,1) 0%, rgba(86,199,244,1) 100%); // cludy
+// $moonfool: linear-gradient(272deg, rgba(101,108,248,1) 0%, rgba(78,71,226,1) 100%); //and white tekst
+// $fullsun: linear-gradient(298deg, rgb(225 197 34) 0%, rgb(255 191 71) 100%);
+// $rain: linear-gradient(273deg, rgba(84,191,252,1) 0%, rgba(17,150,237,1) 100%);
+// $snow: linear-gradient(293deg, rgba(107,189,214,1) 0%, rgba(24,188,200,1) 100%); // clody
+// $fog: linear-gradient(293deg, rgba(168,168,168,1) 0%, rgba(91,91,91,1) 100%);

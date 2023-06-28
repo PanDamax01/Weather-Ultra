@@ -1,11 +1,13 @@
 @use 'reset' as *;
-@use 'colors' as c;
+@use 'colors';
 
 body {
 	padding: 1em 1.2em;
-	background-color: c.$background-color;
+	color: var(--white);
+	background-color: var(--background-color);
 	font-family: 'Open Sans', sans-serif;
 	font-size: 2rem;
+	transition: color 0.3s, background-color 0.3s;
 }
 
 // -components
@@ -41,10 +43,10 @@ body {
 		align-items: center;
 		gap: 0.2em;
 		padding: 0.8em 1.6em;
-		background-color: c.$white;
-		border: 1px solid c.$btn-before;
+		background-color: var(--white);
+		border: 1px solid var(--btn-before);
 		border-radius: 40px;
-		box-shadow: c.$main-shadow;
+		box-shadow: var(--main-shadow);
 		font-size: 1.8rem;
 		font-weight: 600;
 		transition: background-color 0.3s;
@@ -54,7 +56,7 @@ body {
 
 		&::before {
 			@include button-before;
-			background-color: c.$btn-before;
+			background-color: var(--btn-before);
 		}
 
 		&:hover::before {
@@ -71,9 +73,10 @@ body {
 		position: relative;
 		width: 92px;
 		height: 46px;
-		background-color: c.$background-checbox;
+		background-color: var(--background-checbox);
 		border-radius: 40px;
-		box-shadow: c.$main-shadow;
+		box-shadow: var(--main-shadow);
+		border: none;
 		transition: background-color 0.3s;
 		cursor: pointer;
 
@@ -84,28 +87,14 @@ body {
 			left: -1px;
 			width: 46px;
 			height: 46px;
-			background-color: c.$white;
+			background-color: var(--white);
 			border-radius: 50%;
-			box-shadow: c.$dark-shadow;
+			box-shadow: var(--dark-shadow);
 			transition: left 0.3s, transform 0.3s, background-image 0.3s;
 		}
 
 		&:active::after {
-			width: 52px;
-		}
-	}
-
-	&__checkbox {
-		visibility: hidden;
-
-		&:checked + .toolbar__switch {
-			background-color: c.$background-checbox-dark;
-		}
-
-		&:checked + .toolbar__switch::after {
-			left: 101%;
-			background-image: c.$linear-gradient-checbox;
-			transform: translateX(-100%);
+			width: 50px;
 		}
 	}
 
@@ -116,10 +105,11 @@ body {
 		width: 24px;
 		z-index: 1;
 
-		&--mon {
+		&--moon {
 			left: 56px;
 			top: 9px;
 			width: 27px;
+			opacity: 0.3;
 		}
 	}
 }
@@ -131,14 +121,10 @@ body {
 	padding: 0.6em 1.4em;
 	margin: 2em auto 1em;
 	max-width: 380px;
-	color: c.$white;
-	background-image: linear-gradient(
-		122deg,
-		rgba(96, 223, 205, 1) 0%,
-		rgba(30, 154, 254, 1) 100%
-	);
+	text-shadow: 1px 1px 1px #000000a8;
+	background-image: var(--main-gradient);
 	border-radius: 40px;
-	box-shadow: c.$dark-shadow;
+	box-shadow: var(--dark-shadow);
 
 	&__top {
 		display: flex;
@@ -160,13 +146,6 @@ body {
 
 	&__temp {
 		height: inherit;
-		color: transparent;
-		background-image: linear-gradient(
-			182deg,
-			rgba(255, 255, 255, 1) 46%,
-			rgba(46, 171, 242, 1) 100%
-		);
-		background-clip: text;
 		font-size: 3rem;
 		font-weight: bold;
 		transform: translate(-8px, 0px);
@@ -208,9 +187,10 @@ body {
 	padding: 1em 1.4em;
 	margin: 0 auto;
 	max-width: 380px;
-	background-color: c.$white;
+	color: var(--dark);
+	background-color: var(--white);
 	border-radius: 40px;
-	box-shadow: c.$dark-shadow;
+	box-shadow: var(--dark-shadow);
 
 	&__title {
 		margin-bottom: 0.8em;
@@ -262,10 +242,10 @@ body {
 		flex-wrap: wrap;
 		padding: 0.6em 5em 0.6em 1em;
 		margin: 0 auto 0.6em;
-		color: c.$white;
-		background-image: linear-gradient(122deg, #60dfcd, #1e9afe);
+		background-image: var(--main-gradient);
 		border-radius: 20px;
-		box-shadow: c.$dark-shadow;
+		box-shadow: var(--dark-shadow);
+		text-shadow: 1px 1px 1px #000000a8;
 	}
 
 	&__day {
@@ -283,9 +263,6 @@ body {
 
 	&__temp {
 		margin-right: 0.3em;
-		color: transparent;
-		background-image: linear-gradient(182deg, #fff 54%, #2eabf2);
-		background-clip: text;
 		font-size: 2.4rem;
 		font-weight: bold;
 	}
@@ -306,10 +283,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	padding: 0.8em 0.6em;
-	background-color: c.$white;
-	border: c.$border-btn;
+	color: var(--dark);
+	background-color: var(--white);
+	border: var(--border-btn);
 	border-radius: 20px;
-	box-shadow: c.$main-shadow;
+	box-shadow: var(--main-shadow);
 	transition: transform 0.6s;
 
 	&__text {
@@ -337,7 +315,7 @@ body {
 		border: 2px solid #d8d8d8;
 		border-radius: 10px;
 		font-size: 1.6rem;
-		box-shadow: c.$main-shadow;
+		box-shadow: var(--main-shadow);
 	}
 
 	&__box {
@@ -351,19 +329,19 @@ body {
 		display: flex;
 		align-items: center;
 		padding: 0.6em 1.4em;
-		background-color: c.$white;
+		background-color: var(--white);
 		border: 1px solid #0000002e;
 		border-radius: 20px;
 		font-size: 1.6rem;
 		font-weight: 600;
-		box-shadow: c.$main-shadow;
+		box-shadow: var(--main-shadow);
 		cursor: pointer;
 		z-index: 0;
 		overflow: hidden;
 
 		&::before {
 			@include button-before;
-			background-color: c.$btnsend;
+			background-color: var(--btnsend);
 		}
 
 		&:hover::before {
@@ -373,12 +351,12 @@ body {
 
 		&--close {
 			&::before {
-				background-color: c.$btncancel;
+				background-color: var(--btncancel);
 			}
 
 			&:hover {
 				.popup__line {
-					background-color: c.$dark;
+					background-color: var(--dark);
 				}
 			}
 		}
@@ -396,7 +374,7 @@ body {
 		left: 0;
 		width: 2px;
 		height: 18px;
-		background-color: c.$red;
+		background-color: var(--red);
 		transform: rotate(45deg);
 		transition: background-color 0.3s;
 
@@ -423,8 +401,8 @@ body {
 	padding: 0.4em 1em;
 	width: 100%;
 	max-width: 450px;
-	color: c.$white;
-	background-color: c.$red;
+	color: var(--white);
+	background-color: var(--red);
 	transform: translate(-50%, -100px);
 	transition: transform 0.3s;
 	z-index: 20;
@@ -444,8 +422,16 @@ body {
 		left: 8px;
 		width: 3px;
 		height: 21px;
-		background-color: #fff;
+		background-color: var(--white);
 	}
+}
+
+.special{
+	position: absolute;
+	top: -400px;
+	z-index: 1000;
+	transform: translateY(-110%);
+	transition: transform 1.2s;
 }
 
 @import 'small';
@@ -464,7 +450,7 @@ body {
 	0%,
 	40%,
 	100% {
-		border: 2px solid c.$red;
+		border: 2px solid var(--red);
 	}
 	20%,
 	60% {
@@ -536,4 +522,94 @@ body {
 	pointer-events: none;
 	filter: blur(7px);
 	transition: filter 0.3s;
+}
+
+// dark mode
+
+body.dark {
+	background: radial-gradient(
+		circle,
+		rgba(53, 69, 96, 1) 44%,
+		rgba(11, 18, 30, 1) 100%
+	);
+	--white: #000000;
+	--dark: #ffffff;
+	--background-checbox: #242424;
+
+	--main-shadow: 4px 4px 20px 0 rgb(88 180 248 / 36%);
+	--dark-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+	--main-gradient: linear-gradient(104deg, #1984ff, #34dbff);
+	--linear-gradient-checbox: linear-gradient(180deg, #777, #3a3a3a);
+
+	--btn-before: rgba(10, 213, 244, 0.676);
+	--border-btn: 2px solid #574f4f;
+	--red: rgb(0, 0, 0);
+
+	--btncancel: #ff4848;
+	--btnsend: rgb(108, 249, 108);
+
+	.toolbar {
+		&__search {
+			background-color: #004b6f;
+			color: #fff;
+		}
+
+		&__switch::after {
+			background-image: linear-gradient(180deg, #777, #3a3a3a);
+			transform: translateX(101%);
+			transition: right 0.3s;
+
+			&:active::after {
+				width: 50px;
+			}
+		}
+
+		&__icon {
+			&--moon {
+				opacity: 1;
+			}
+
+			&--sun {
+				opacity: 0.2;
+			}
+		}
+	}
+
+	.main-info {
+		text-shadow: none;
+	}
+
+	.more-info {
+		background-color: transparent;
+		text-shadow: 1px 1px 1px #0000009c;
+
+		&__item {
+			text-shadow: 1px 1px 1px #00000091;
+		}
+	}
+	.weather-future {
+		&__item {
+			text-shadow: 1px 1px 1px hsl(0deg 0% 100% / 29%);
+		}
+	}
+
+	.popup {
+		background-image: linear-gradient(0deg, #777, #3a3a3a);
+
+		&__btn {
+			background-color: royalblue;
+		}
+	}
+
+	.error {
+		color: #fff;
+	}
+
+	@media (min-width: 992px) {
+		.weather-now {
+			color: #fff;
+			background-image: none;
+		}
+	}
 }
